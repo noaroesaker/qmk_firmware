@@ -11,7 +11,7 @@
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
-#define SPLIT_TRANSPORT_MIRROR
+//#define SPLIT_TRANSPORT_MIRROR
 
 #   define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 // #   define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
