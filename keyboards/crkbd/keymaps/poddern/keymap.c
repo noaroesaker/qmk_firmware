@@ -1,7 +1,3 @@
-enum {
-  TD_Q_TAB = 0
-};
-
 #include QMK_KEYBOARD_H
 #include <stdio.h>
 #include "keymap_norwegian.h"
@@ -85,17 +81,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, COLEMAK,
   //└────────┴────────┴────────┴────────┼────────┴────────┴────────┐  ┌────────┴────────┴────────┼────────┴────────┼────────┴────────┘
                                           KC_LGUI, _______,  KC_SPC,     KC_ENT, _______, KC_RALT
-                                      //└────────┴────────┴────────┘  └────────┴────────┴────────┘
-  ),
-  [_INVERT] = LAYOUT_split_3x6_3(
-  //┌────────┬────────┬────────┬────────┬────────┬────────┐                    ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       KC_TAB,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, XXXXXXX,
-  //├────────┼────────┼────────┼────────┼────────┼────────┤                    ├────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MINS,  KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS,  KC_GRV,
-  //├────────┼────────┼────────┼────────┼────────┼────────┤                    ├────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_TILD,
-  //└────────┴────────┴────────┴────────┼────────┴────────┴────────┐  ┌────────┴────────┴────────┼────────┴────────┼────────┴────────┘
-                                          KC_LGUI,   MO(3),  KC_SPC,     KC_ENT, _______, KC_RALT
                                       //└────────┴────────┴────────┘  └────────┴────────┴────────┘
   )
 };
