@@ -1,3 +1,4 @@
+
 /* Copyright 2020 @toastedmangoes
  *
  * This program is free software: you can redistribute it and/or modify
