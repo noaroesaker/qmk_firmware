@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //├────────┼────────┼────────┼────────┼────────┴────────┼────────┤       ├────────┼────────┴────────┼────────┼────────┼────────┼────────┤
         _______, _______, _______, _______, _______, _______, _______,         _______, _______, _______, RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD
     //└────────┴────────┴────────┴────────┴────────┴────────┴────────┘       └────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-    )
+    ),
     [_HWCONFIG] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                         ┌────────┬────────┬────────┬────────┬────────┬────────┐
         KC_GRV ,  KC_1  ,  KC_2  ,  KC_3  ,  KC_4  ,  KC_5  ,                            KC_6  ,  KC_7  ,  KC_8  ,  KC_9  ,  KC_0  ,  KC_DEL,
@@ -102,11 +102,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //├────────┼────────┼────────┼────────┼────────┴────────┼────────┤       ├────────┼────────┴────────┼────────┼────────┼────────┼────────┤
         ADJUST , KC_ESC , KC_LALT, KC_LGUI, _______,  LOWER , KC_SPC ,         KC_SPC ,  RAISE , _______, KC_LEFT, KC_DOWN,  KC_UP , KC_RGHT
     //└────────┴────────┴────────┴────────┴────────┴────────┴────────┘       └────────┴────────┴────────┴────────┴────────┴────────┴────────┘
-    ),
+    )
 };
 
 
-/* not working dont carte to find out why
+
 void matrix_init_user(void) {
     #ifdef SSD1306OLED
         iota_gfx_init(!has_usb());   // turns on the display
@@ -656,33 +656,8 @@ bool oled_task_user() {
         oled_off();
     } else if (is_keyboard_master()) {
         render_animation();
-    } else {
-        render_status(&matrix);
     }
     return false;
 };
 
-void render_status(struct CharacterMatrix *matrix) {
-  // Render to mode icon
-    static const char os_logo[][2][3] PROGMEM = {{{0x95,0x96,0},{0xb5,0xb6,0}},{{0x97,0x98,0},{0xb7,0xb8,0}}};
-    if (is_mac_mode()) {
-        oled_write_P(os_logo[0][0], false);
-        oled_write_P(PSTR("\n"), false);
-        oled_write_P(os_logo[0][1], false);
-    } else {
-        oled_write_P(os_logo[1][0], false);
-        oled_write_P(PSTR("\n"), false);
-        oled_write_P(os_logo[1][1], false);
-    }
 
-    oled_write_P(PSTR(" "), false);
-    render_layer_status(matrix);
-
-    // Host Keyboard LED Status
-    led_t led_state = host_keyboard_led_state();
-    oled_write_P(led_state.num_lock ? PSTR("NUMLOCK") : PSTR("       "), false);
-    oled_write_P(led_state.caps_lock ? PSTR("CAPS") : PSTR("    "), false);
-    oled_write_P(led_state.scroll_lock ? PSTR("SCLK") : PSTR("    "), false);
-    oled_write_P(PSTR("\n"), false);
-}
-*/
